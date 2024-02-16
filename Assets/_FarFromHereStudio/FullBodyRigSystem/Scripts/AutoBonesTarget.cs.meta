@@ -1,0 +1,45 @@
+fileFormatVersion: 2
+guid: e63cd88c4fe964546b6c838c95883925
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - MaxCC: {fileID: 11400000, guid: ffd99e0a39fded74ea2424eb33f1fca7, type: 2}
+  - Maya: {fileID: 11400000, guid: 469325f2ad5960449af2f49bdbbe4a3d, type: 2}
+  - Mixamo: {fileID: 11400000, guid: 3005dd75055e97240a2d98a99d5be8c5, type: 2}
+  - RigPrefab: {fileID: 3406598920820884575, guid: 7bd7dfe81b058fb4da75ed000a88daff, type: 3}
+  - RigAsset: {instanceID: 0}
+  - LookAtSpine: {fileID: 6499814016685445440, guid: cc80619493ed2ee4fb483a0558fe0b65, type: 3}
+  - LookAtHips: {fileID: 8458841755027505804, guid: 93a5934c128031b438a972705edffd55, type: 3}
+  - BlendHeadTarget: {fileID: 145273154528332035, guid: 1c14ddc5a6fe1eb45a7a222bc6767fce, type: 3}
+  - HeadTarget: {instanceID: 0}
+  - RigModules: {instanceID: 0}
+  - playableDirector: {instanceID: 0}
+  - Root: {instanceID: 0}
+  - Hips: {instanceID: 0}
+  - Spine: {instanceID: 0}
+  - Spine1: {instanceID: 0}
+  - Spine2: {instanceID: 0}
+  - Neck: {instanceID: 0}
+  - Head: {instanceID: 0}
+  - LeftShoulder: {instanceID: 0}
+  - LeftArm: {instanceID: 0}
+  - LeftForeArm: {instanceID: 0}
+  - LeftHand: {instanceID: 0}
+  - RightShoulder: {instanceID: 0}
+  - RightArm: {instanceID: 0}
+  - RightForeArm: {instanceID: 0}
+  - RightHand: {instanceID: 0}
+  - LeftUpLeg: {instanceID: 0}
+  - LeftLeg: {instanceID: 0}
+  - LeftFoot: {instanceID: 0}
+  - LeftToeBase: {instanceID: 0}
+  - RightUpLeg: {instanceID: 0}
+  - RightLeg: {instanceID: 0}
+  - RightFoot: {instanceID: 0}
+  - RightToeBase: {instanceID: 0}
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 1c23823aeff990742840fed6d461615a, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

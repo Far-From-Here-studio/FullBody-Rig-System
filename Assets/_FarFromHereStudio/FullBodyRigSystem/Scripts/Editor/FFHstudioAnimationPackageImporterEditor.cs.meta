@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 8579849ed4b009c44b7c66fd967b4503
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - FFHData: {fileID: 11400000, guid: f54ca1967d531a14680d02b32d4aaec5, type: 2}
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 1c23823aeff990742840fed6d461615a, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

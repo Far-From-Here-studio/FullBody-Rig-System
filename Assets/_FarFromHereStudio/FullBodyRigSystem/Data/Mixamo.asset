@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e793253132cced84e8d869f4eebb8e54, type: 3}
+  m_Name: Mixamo
+  m_EditorClassIdentifier: 
+  Root: 
+  Hips: mixamorig:Hips
+  Spine_01: mixamorig:Spine
+  Spine_02: mixamorig:Spine1
+  Spine_03: mixamorig:Spine2
+  neck_01: mixamorig:Neck
+  head: mixamorig:Head
+  clavicle_l: mixamorig:LeftShoulder
+  upperarm_l: mixamorig:LeftArm
+  lowerarm_l: mixamorig:LeftForeArm
+  hand_l: mixamorig:LeftHand
+  clavicle_r: mixamorig:RightShoulder
+  upperarm_r: mixamorig:RightArm
+  lowerarm_r: mixamorig:RightForeArm
+  hand_r: mixamorig:RightHand
+  thigh_l: mixamorig:LeftUpLeg
+  calf_l: mixamorig:LeftLeg
+  foot_l: mixamorig:LeftFoot
+  ball_l: mixamorig:LeftToeBase
+  thigh_r: mixamorig:RightUpLeg
+  calf_r: mixamorig:RightLeg
+  foot_r: mixamorig:RightFoot
+  ball_r: mixamorig:RightToeBase

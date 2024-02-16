@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &145273154528332035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7987281984092396836}
+  - component: {fileID: 4970832238834974680}
+  - component: {fileID: 6657234974182126596}
+  - component: {fileID: 5477805695753208346}
+  m_Layer: 0
+  m_Name: BlendHeadTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7987281984092396836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145273154528332035}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.013227187, y: 0.54558784, z: -0.023214523, w: 0.83762765}
+  m_LocalPosition: {x: -0.07, y: 1.59, z: 4.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 2.722, y: 66.123, z: -1.403}
+--- !u!114 &4970832238834974680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145273154528332035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Weight: 1
+  m_Effectors: []
+--- !u!114 &6657234974182126596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145273154528332035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2cc48f812a19f40a5c644fbc9b4d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Weight: 1
+  m_Data:
+    m_ConstrainedObject: {fileID: 7987281984092396836}
+    m_SourceA: {fileID: 0}
+    m_SourceB: {fileID: 0}
+    m_BlendPosition: 1
+    m_BlendRotation: 0
+    m_PositionWeight: 1
+    m_RotationWeight: 0
+    m_MaintainPositionOffsets: 0
+    m_MaintainRotationOffsets: 0
+--- !u!114 &5477805695753208346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145273154528332035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c149e2cb1409ec48a8f3157b0eeb8d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Unselectable: 1
+  gizmoMesh: {fileID: 4300000, guid: 988d40a149409614db6a14be4d3941d8, type: 2}
+  gizmoScale: 0.1
+  gizmoOffset: {x: 0, y: 0, z: 0}
+  gizmoShader: {fileID: 4800000, guid: f559136459940c04ebc2f19af6950378, type: 3}
+  gizmoColor: {r: 1, g: 0, b: 0, a: 1}
+  position: {x: -0.07, y: 1.59, z: 4.72}
