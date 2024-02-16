@@ -1,13 +1,16 @@
 using UnityEngine;
 
+[ExecuteAlways]
 public class BasicController : MonoBehaviour
 {
+    public bool AutoTurn;
     public float Speed;
     Animator animator;
-    [SerializeField] private LookAtTarget LookAt;
+    private LookAtTarget LookAt;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
+        if (!AutoTurn) return;
         animator = GetComponent<Animator>();
         LookAt = GetComponent<LookAtTarget>();
     }
@@ -15,7 +18,9 @@ public class BasicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(!LookAt.Isturning)animator.SetFloat("Speed", Speed);
+        if (!AutoTurn) return;
+        if(!LookAt) LookAt = GetComponent<LookAtTarget>();
+        if(!animator) animator = GetComponent<Animator>();
+        if (!LookAt.Isturning) animator.SetFloat("Speed", Speed);
     }
 }

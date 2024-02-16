@@ -12,17 +12,16 @@ public class LookAtTarget : MonoBehaviour
     public bool GenericModel;
     public bool Isturning;
 
-    private void Start()
+    private void OnEnable()
     {
-        animator = GetComponent<Animator>();
-        
+        animator = GetComponent<Animator>();      
     }
     private void OnAnimatorIK(int layerIndex)
     {
         if (GenericModel) return;
         turn();
     }
-    void LateUpdate()
+    void Update()
     {
         if (!GenericModel) return;
         turn();

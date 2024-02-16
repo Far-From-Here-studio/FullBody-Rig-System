@@ -43,7 +43,7 @@ public class FFHstudioAnimationPackageImporterEditor : EditorWindow
 
     static void Startup()
     {
-        data = AssetDatabase.LoadAssetAtPath<FFHPackagesData>("Assets/_FarFromHereStudio/FFH Package Manager/Editor/Data/FFH Packages.asset");
+        data = AssetDatabase.LoadAssetAtPath<FFHPackagesData>("Assets/FarFromHere/FFH Package Manager/Editor/Data/FFH Packages.asset");
         showOnStart = false;
         showOnStart = GetStartupValue(data);
         if (showOnStart) Init();
