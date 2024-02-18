@@ -237,7 +237,7 @@ Material:
     - _EnergyConservingSpecularColor: 1
     - _ExcludeFromTUAndAA: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.33166248
+    - _Glossiness: 0.338
     - _GlossyReflections: 1
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
