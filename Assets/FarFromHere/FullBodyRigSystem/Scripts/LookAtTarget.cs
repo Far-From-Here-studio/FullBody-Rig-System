@@ -6,11 +6,12 @@ public class LookAtTarget : MonoBehaviour
     public Transform target;
     public float speed = 0.1f;
     public float RotationThreshold = 1;
-    Animator animator;
+    Animator animator = null;
     float _speed = 0;
     float rotationDirection;
     public bool GenericModel;
     public bool Isturning;
+    private float currentspeed;
 
     private void OnEnable()
     {
@@ -18,13 +19,16 @@ public class LookAtTarget : MonoBehaviour
     }
     private void OnAnimatorIK(int layerIndex)
     {
-        if (GenericModel) return;
-        turn();
+        transform.rotation = turn();
     }
     void Update()
     {
-        if (!GenericModel) return;
-        turn();
+        transform.rotation = turn();
+    }
+
+    void LateUpdate()
+    {
+        transform.rotation = turn();
     }
     public Quaternion turn()
     {
@@ -36,14 +40,18 @@ public class LookAtTarget : MonoBehaviour
         // Determine the direction of rotation (-1 for left, 1 for right)
         rotationDirection = Mathf.Lerp(rotationDirection, (newYAngle - transform.eulerAngles.y) < 0 ? -1f : 1f, Time.deltaTime * 10);
 
-        var currentspeed = animator.GetFloat("Speed");
+
         // Check if the character is turning
         if (Mathf.Abs(newYAngle) > RotationThreshold)
         {
             Isturning = true;
-            _speed = Mathf.Lerp(_speed, 0.51f, Time.deltaTime * 25);
-            animator.SetFloat("Speed", _speed);
-            animator.SetFloat("FrontBack", rotationDirection);
+            if(animator.runtimeAnimatorController)
+            {
+                _speed = Mathf.Lerp(_speed, 0.51f, Time.deltaTime * 25);
+                animator.SetFloat("Speed", _speed);
+                animator.SetFloat("FrontBack", rotationDirection);
+            }
+
         }
         else { Isturning = false; }
 

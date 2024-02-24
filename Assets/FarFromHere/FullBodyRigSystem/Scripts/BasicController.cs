@@ -5,7 +5,7 @@ public class BasicController : MonoBehaviour
 {
     public bool AutoTurn;
     public float Speed;
-    Animator animator;
+    Animator animator = null;
     private LookAtTarget LookAt;
     // Start is called before the first frame update
     void OnEnable()
@@ -20,7 +20,6 @@ public class BasicController : MonoBehaviour
     {
         if (!AutoTurn) return;
         if(!LookAt) LookAt = GetComponent<LookAtTarget>();
-        if(!animator) animator = GetComponent<Animator>();
-        if (!LookAt.Isturning) animator.SetFloat("Speed", Speed);
+        if (animator.runtimeAnimatorController && animator.isHuman && !LookAt.Isturning) animator.SetFloat("Speed", Speed);
     }
 }

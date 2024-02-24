@@ -149,10 +149,11 @@ namespace FFH.Animation
             {
                 //don't work!
                 //_animator.rootRotation = lookAt.turn();
-               
-                PinTransform();
+              
+                
                 if (TimelineTime != (float)playableDirector.time)
                 {
+                    PinTransform();
                     
                     TimelineTime = (float)playableDirector.time;
                 }
@@ -161,6 +162,10 @@ namespace FFH.Animation
                 {
                     LookAtModule(RigModules.BlendHeadTarget.transform);
                 }
+            }
+            else 
+            {
+            if(pinTransform) PinTransform();
             }
 
             }
