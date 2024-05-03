@@ -22,5 +22,5 @@ Used on FarLands-Legend (Far From Here Studio's multiplayer game in prodution)
 . Crouch Control
 
 The tool is to be refined, there is so much more to do with it!
-Most of the Work now is imprroving UI and UX, having a better controls using playable graph system for timelines, an extension for quadruped and more.
+Most of the Work now is improving UI and UX, having a better controls using playable graph system for timelines, an extension for quadruped and more.
 
