@@ -3,6 +3,7 @@ using UnityEngine;
 [ExecuteAlways]
 public class BasicController : MonoBehaviour
 {
+    public bool AnimatorUpdateEditorMode;
     public bool AutoTurn;
     public float Speed;
     Animator animator = null;
@@ -16,10 +17,15 @@ public class BasicController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        if (!AutoTurn) return;
-        if(!LookAt) LookAt = GetComponent<LookAtTarget>();
-        if (animator.runtimeAnimatorController && animator.isHuman && !LookAt.Isturning) animator.SetFloat("Speed", Speed);
+        if(AnimatorUpdateEditorMode) animator.Update(Time.deltaTime);
+        if (AutoTurn)
+        {
+            if (!animator) animator = GetComponent<Animator>();
+            if (!LookAt) LookAt = GetComponent<LookAtTarget>();
+            if (animator.runtimeAnimatorController && animator.isHuman && !LookAt.Isturning) animator.SetFloat("Speed", Speed);
+        }
+        animator.rootRotation = LookAt.turn();
     }
 }

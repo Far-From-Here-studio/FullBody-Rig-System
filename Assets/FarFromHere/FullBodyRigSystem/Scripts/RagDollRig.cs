@@ -14,15 +14,19 @@ namespace FFH.Animation
         public float RagdollWeight;
         public Rig FullBodyRagDollRig;
         public bool DisableAIController;
-        public Transform hips;
-        public Transform root;
+
         public float SnapRagdollTimer = 1f;
 
+        [HideInInspector]
+        public Transform hips;
+        [HideInInspector]
+        public Transform root;
+        [HideInInspector]
         public Transform RagdollLeftFoot;
+        [HideInInspector]
         public Transform RagdollRightFoot;
 
         private bool isAgent;
-        private float _SnapRagdollTimer = 0;
         private bool SnappedRagdoll = false;
         private Vector3 RadollHipsSnapTranform;
         private Vector3 RootSnapTranform;
@@ -119,7 +123,7 @@ namespace FFH.Animation
                 ResetRagdollToRig = false;
                 if(_autoBonesTarget.pinTransform) { _autoBonesTarget.PinTransform(); }
                 FullBodyRagDollRig.weight = 0;
-                _SnapRagdollTimer = 0;
+
                 _animator.SetBool("Dead", false);
                 SnappedRagdoll = true;
             }
@@ -139,7 +143,7 @@ namespace FFH.Animation
                 // if (isAgent && DisableAIController) agent.enabled = false;
                 SnappedRagdoll = false;
                 ResetRagdollToRig = true;
-                _SnapRagdollTimer = 0;
+
             }
             else if (RagdollWeight > 0.1f && RagdollWeight < 0.9f)
             {
@@ -155,7 +159,7 @@ namespace FFH.Animation
                 _animator.SetBool("Dead", true);
                 ResetRagdollToRig = true;
                 SnappedRagdoll = false;
-                _SnapRagdollTimer = 0;
+
 
             }
             else if (RagdollWeight > 0.9f)

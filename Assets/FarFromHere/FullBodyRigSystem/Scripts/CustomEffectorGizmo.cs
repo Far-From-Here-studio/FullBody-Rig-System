@@ -18,20 +18,9 @@ namespace FFH.Animation
         public Vector3 position;
         private Material gizmoMaterial; // Material for the gizmo.
 
-        private void OnEnable()
-        {
-            Shader shader = Shader.Find("Hidden/RigEffector");
-            if (shader != null)
-            {
-                gizmoMaterial = new Material(shader);
-            }
-            else
-            {
-                Debug.LogError("Shader not found!");
-            }
-        }
         private void OnDrawGizmos()
         {
+            if (EditorApplication.isPlaying) return;
             if (!Unselectable)
             {
                 position = transform.position;
@@ -51,14 +40,10 @@ namespace FFH.Animation
                     }
                 }
             }
-
-        }
-
-        void OnRenderObject()
-        {
-            if (EditorApplication.isPlaying) return;
             if (Unselectable)
             {
+                if(!gizmoMaterial)
+                    gizmoMaterial = new Material(gizmoShader);
                 if (gizmoMesh == null || gizmoMaterial == null) return;
 
 
@@ -67,11 +52,11 @@ namespace FFH.Animation
                 Vector3 scale = new Vector3(gizmoScale, gizmoScale, gizmoScale);
                 Graphics.DrawMeshNow(
                     gizmoMesh,
-                    Matrix4x4.TRS(transform.position + gizmoOffset, transform.rotation, scale)
+                    Matrix4x4.TRS(transform.position + gizmoOffset, transform.rotation, new Vector3(gizmoScale, gizmoScale, gizmoScale))
                 ); // Draw the mesh at the effector's position, with its rotation, and the desired scale and offset.
             }
-
         }
+
     }
 }
 

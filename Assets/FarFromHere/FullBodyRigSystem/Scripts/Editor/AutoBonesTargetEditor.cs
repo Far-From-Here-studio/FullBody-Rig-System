@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -39,7 +38,7 @@ namespace FFH.Animation
             PinTransfrom = serializedObject.FindProperty("pinTransform");
             Mode = serializedObject.FindProperty("Mode");
             RigAsset = serializedObject.FindProperty("RigAsset");
-            TimelinePlayable = serializedObject.FindProperty("playableDirector");
+            //TimelinePlayable = serializedObject.FindProperty("playableDirector");
             TimelineMode = serializedObject.FindProperty("TimeLineMode");
             HeadTargetWSWeight = serializedObject.FindProperty("HeadTargetWSWeight");
             LookAtTarget = serializedObject.FindProperty("LookAtTarget");
@@ -55,7 +54,7 @@ namespace FFH.Animation
             EditorGUILayout.PropertyField(PinTransfrom);
             EditorGUILayout.PropertyField(Mode);
             EditorGUILayout.PropertyField(RigAsset);
-            EditorGUILayout.PropertyField(TimelinePlayable);
+            //EditorGUILayout.PropertyField(TimelinePlayable);
             EditorGUILayout.PropertyField(TimelineMode);
             EditorGUILayout.PropertyField(rigTargets);
             EditorGUILayout.PropertyField(PinTargets);
@@ -287,7 +286,7 @@ namespace FFH.Animation
 
             rigModules.ragDollRig = autoBonesTarget.GetComponentInChildren<RagdollModule>();
             rigModules.RagdollRig = rigModules.ragDollRig.FullbodyRagdollRig;
-            var RagdollSetup = autoBonesTarget.AddComponent<RagDollRig>();
+            var RagdollSetup = autoBonesTarget.gameObject.AddComponent<RagDollRig>();
 
             RagdollSetup.MainRig = autoBonesTarget.RigAsset.GetComponent<Rig>();
             RagdollSetup.root = autoBonesTarget.gameObject.transform;

@@ -9,7 +9,10 @@ public class LookAtTarget : MonoBehaviour
     Animator animator = null;
     float _speed = 0;
     float rotationDirection;
-    public bool GenericModel;
+
+    //Make a special turn method for Generic models later on, using RootmotionNode injection
+    bool GenericModel;
+
     public bool Isturning;
     private float currentspeed;
 
@@ -19,17 +22,18 @@ public class LookAtTarget : MonoBehaviour
     }
     private void OnAnimatorIK(int layerIndex)
     {
-        transform.rotation = turn();
-    }
-    void Update()
-    {
+        if(target == null) return;
+        animator.rootRotation = turn();
         transform.rotation = turn();
     }
 
     void LateUpdate()
     {
+        if (target == null) return;
+        animator.rootRotation = turn();
         transform.rotation = turn();
     }
+
     public Quaternion turn()
     {
         Vector3 relativePos = transform.InverseTransformDirection(target.position - transform.position);
@@ -41,7 +45,7 @@ public class LookAtTarget : MonoBehaviour
         rotationDirection = Mathf.Lerp(rotationDirection, (newYAngle - transform.eulerAngles.y) < 0 ? -1f : 1f, Time.deltaTime * 10);
 
 
-        // Check if the character is turning
+        // Check if the character is turning to get walk animation accorded to turining state and direction
         if (Mathf.Abs(newYAngle) > RotationThreshold)
         {
             Isturning = true;

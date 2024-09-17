@@ -2,7 +2,7 @@ Shader "Hidden/RigEffector"
 {
     Properties
     {
-        _Color ("Color", Color) = (1,1,1,1)
+        _Color ("Color", Color) = (1,1,1,0.5)
         _Dither ("Dithering", float) = 0
         _HandleZTest ("_HandleZTest", Int) = 8
     }
@@ -57,6 +57,7 @@ Shader "Hidden/RigEffector"
                 float checker = -frac(i.pos.x + i.pos.y);
                 clip(lerp(1, checker, _Dither));
 
+                _Color.a *= .5;
                 return _Color;
             }
 
