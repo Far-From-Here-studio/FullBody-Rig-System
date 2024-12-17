@@ -88,6 +88,12 @@ namespace FFH.Animation
             Animator animator = Selection.activeGameObject.GetComponent<Animator>();
             AutoBonesTarget c = autoBonesTarget;
             RigMapper m = Selection.activeGameObject.GetComponent<RigMapper>();
+
+            if(!Selection.activeGameObject.GetComponent<RigBuilder>())
+            {
+                Selection.activeGameObject.AddComponent<RigBuilder>();
+            }
+
             if (c == null)
             {
                 c = Selection.activeGameObject.AddComponent<AutoBonesTarget>();
