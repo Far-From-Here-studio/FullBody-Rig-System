@@ -1,4 +1,7 @@
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 [ExecuteAlways]
 public class LookAtTarget : MonoBehaviour
@@ -20,18 +23,15 @@ public class LookAtTarget : MonoBehaviour
     {
         animator = GetComponent<Animator>();      
     }
-    private void OnAnimatorIK(int layerIndex)
-    {
-        if(target == null) return;
-        animator.rootRotation = turn();
-        transform.rotation = turn();
-    }
 
-    void LateUpdate()
+    void OnAnimatorMove()
     {
-        if (target == null) return;
-        animator.rootRotation = turn();
-        transform.rotation = turn();
+        if (animator)
+        {
+            if (target == null) return;
+            animator.rootRotation = turn();
+            transform.rotation = turn();
+        }
     }
 
     public Quaternion turn()
